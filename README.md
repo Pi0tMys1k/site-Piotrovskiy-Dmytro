@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>AutoLux — автосалон</title>
+<title>AutoLux — Автосалон</title>
 
 <style>
 
@@ -12,23 +13,50 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
+font-family:Arial;
 scroll-behavior:smooth;
-font-family:Arial, Helvetica, sans-serif;
 }
 
 body{
-background:#0f0f0f;
+background:#0a0f18;
 color:white;
+}
+
+/* NAVBAR */
+
+nav{
+position:fixed;
+top:0;
+width:100%;
+background:#0f1724;
+display:flex;
+justify-content:center;
+gap:40px;
+padding:15px;
+z-index:1000;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+font-size:18px;
+transition:0.3s;
+}
+
+nav a:hover{
+color:#ff3b3b;
 }
 
 /* HEADER */
 
 header{
 height:100vh;
-background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.8)),
+background:
+linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.8)),
 url("https://images.unsplash.com/photo-1492144534655-ae79c964c9d7");
 background-size:cover;
 background-position:center;
+
 display:flex;
 flex-direction:column;
 justify-content:center;
@@ -42,7 +70,7 @@ margin-bottom:20px;
 }
 
 header p{
-font-size:22px;
+font-size:20px;
 opacity:0.9;
 }
 
@@ -50,44 +78,19 @@ header button{
 margin-top:30px;
 padding:15px 35px;
 border:none;
-background:#e00000;
+background:#ff2e2e;
 color:white;
 font-size:18px;
-border-radius:5px;
+border-radius:6px;
 cursor:pointer;
 transition:0.3s;
 }
 
 header button:hover{
-background:#ff2e2e;
+background:#ff4c4c;
 }
 
-/* NAVBAR */
-
-nav{
-position:fixed;
-top:0;
-width:100%;
-background:#111;
-display:flex;
-justify-content:center;
-padding:15px;
-z-index:1000;
-}
-
-nav a{
-color:white;
-text-decoration:none;
-margin:0 20px;
-font-size:18px;
-transition:0.3s;
-}
-
-nav a:hover{
-color:red;
-}
-
-/* SECTIONS */
+/* SECTION */
 
 section{
 padding:80px 10%;
@@ -95,22 +98,22 @@ padding:80px 10%;
 
 h2{
 text-align:center;
-font-size:36px;
-margin-bottom:50px;
-color:#ff2e2e;
+margin-bottom:40px;
+font-size:35px;
+color:#ff3b3b;
 }
 
 /* ABOUT */
 
 .about{
-text-align:center;
-max-width:900px;
+max-width:800px;
 margin:auto;
-font-size:18px;
+text-align:center;
 line-height:1.6;
+font-size:18px;
 }
 
-/* CAR CARDS */
+/* CARDS */
 
 .cars{
 display:grid;
@@ -119,11 +122,11 @@ gap:30px;
 }
 
 .card{
-background:#1a1a1a;
-border-radius:10px;
+background:#111827;
+border-radius:12px;
 overflow:hidden;
 transition:0.4s;
-box-shadow:0 0 15px rgba(0,0,0,0.6);
+box-shadow:0 10px 25px rgba(0,0,0,0.5);
 }
 
 .card:hover{
@@ -152,23 +155,21 @@ font-size:15px;
 /* BRANDS */
 
 .brands{
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
-gap:30px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+gap:20px;
+text-align:center;
 }
 
 .brand{
-background:#1a1a1a;
-padding:25px;
+background:#111827;
+padding:20px;
 border-radius:8px;
-width:200px;
-text-align:center;
 transition:0.3s;
 }
 
 .brand:hover{
-background:#222;
+background:#1f2937;
 transform:scale(1.05);
 }
 
@@ -182,8 +183,8 @@ gap:20px;
 
 .gallery img{
 width:100%;
-border-radius:8px;
-transition:0.3s;
+border-radius:10px;
+transition:0.4s;
 }
 
 .gallery img:hover{
@@ -193,27 +194,31 @@ transform:scale(1.05);
 /* FOOTER */
 
 footer{
-background:#111;
-padding:30px;
+background:#0f1724;
+padding:25px;
 text-align:center;
 margin-top:60px;
 }
 
 </style>
+
 </head>
 
 <body>
 
 <nav>
+
 <a href="#about">О нас</a>
 <a href="#cars">Автомобили</a>
 <a href="#brands">Бренды</a>
 <a href="#gallery">Галерея</a>
+
 </nav>
 
 <header>
 
 <h1>AutoLux</h1>
+
 <p>Премиальный автосалон современных автомобилей</p>
 
 <button onclick="document.getElementById('cars').scrollIntoView()">Смотреть автомобили</button>
@@ -225,17 +230,18 @@ margin-top:60px;
 <h2>О нашем автосалоне</h2>
 
 <div class="about">
+
 <p>
 AutoLux — современный автосалон, где представлены лучшие автомобили
-мировых брендов. Мы предлагаем спортивные автомобили, внедорожники
-и современные электромобили.
+мировых производителей. Мы предлагаем спортивные автомобили,
+внедорожники и современные электромобили.
 </p>
 
 <p>
-Автомобиль сегодня — это не просто транспорт, а сочетание технологий,
-дизайна, комфорта и безопасности. Именно поэтому мы выбираем только
-лучшие модели для наших клиентов.
+Наш салон предлагает автомобили от ведущих брендов с лучшими
+характеристиками безопасности, комфорта и производительности.
 </p>
+
 </div>
 
 </section>
@@ -250,7 +256,7 @@ AutoLux — современный автосалон, где представл
 <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70">
 <div class="card-content">
 <h3>Спортивный автомобиль</h3>
-<p>Мощный двигатель, аэродинамика и высокая скорость.</p>
+<p>Высокая скорость, мощный двигатель и спортивный дизайн.</p>
 </div>
 </div>
 
@@ -266,7 +272,7 @@ AutoLux — современный автосалон, где представл
 <img src="https://images.unsplash.com/photo-1549921296-3a6b1c52b0b7">
 <div class="card-content">
 <h3>Электромобиль</h3>
-<p>Экологичный транспорт будущего с современными технологиями.</p>
+<p>Экологичный транспорт будущего.</p>
 </div>
 </div>
 
@@ -281,7 +287,7 @@ AutoLux — современный автосалон, где представл
 <div class="brands">
 
 <div class="brand">BMW</div>
-<div class="brand">Mercedes</div>
+<div class="brand">Mercedes-Benz</div>
 <div class="brand">Audi</div>
 <div class="brand">Tesla</div>
 <div class="brand">Toyota</div>
@@ -293,7 +299,7 @@ AutoLux — современный автосалон, где представл
 
 <section id="gallery">
 
-<h2>Галерея автомобилей</h2>
+<h2>Галерея</h2>
 
 <div class="gallery">
 
@@ -308,7 +314,7 @@ AutoLux — современный автосалон, где представл
 
 <footer>
 
-<p>© 2026 AutoLux — автосалон автомобилей</p>
+<p>© 2026 AutoLux</p>
 
 </footer>
 
